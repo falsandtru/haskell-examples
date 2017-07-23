@@ -1,7 +1,7 @@
 name:                examples
 version:             0.0.0.0
 -- synopsis:
--- description:
+description:         Examples.
 homepage:            https://github.com/falsandtru/haskell-examples
 license:             BSD3
 license-file:        LICENSE
