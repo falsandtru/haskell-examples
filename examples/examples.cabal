@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0bc5868c47cb35cb89929458f5b75568bd5a20235b2b00e0143e766ce4379230
+-- hash: b1db8f45d13b1a30d7568e3e2e4dabee9f8cdae7734dfbfeb38b08b1073c6bc3
 
 name:           examples
 version:        0.1.0.0
@@ -58,6 +58,18 @@ test-suite examples-doc
       base >=4.7 && <5
     , doctest
     , examples
+  default-language: Haskell2010
+
+test-suite examples-proof
+  type: exitcode-stdio-1.0
+  main-is: proof.hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , examples
+    , process
   default-language: Haskell2010
 
 test-suite examples-spec

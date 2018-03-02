@@ -56,6 +56,20 @@ tests:
     - QuickCheck
     - smallcheck
     - hlint
+  examples-proof:
+    main:                proof.hs
+    source-dirs:         test
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -Wcompat
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - examples
+    - process
+    other-modules: []
   examples-doc:
     main:                doc.hs
     source-dirs:         test
