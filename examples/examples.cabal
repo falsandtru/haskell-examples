@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9b391e2311884afecd5b650e70378c6c21dd6d163158b254a322e8361913ebaf
+-- hash: 48a2063b9b417114401a907fc0ab12c7b70266bd9e8a6674d0809fcbb32b25e0
 
 name:           examples
 version:        0.1.0.0
@@ -42,7 +42,8 @@ executable example
       Paths_examples
   hs-source-dirs:
       app
-  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N -optl-static -optl-pthread
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
   build-depends:
       base >=4.7 && <5
     , examples
