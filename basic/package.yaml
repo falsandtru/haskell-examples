@@ -1,0 +1,55 @@
+name: basic
+
+dependencies:
+  - base
+
+library:
+  source-dirs: src
+
+executables:
+  basic:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+      - -Wall
+      - -Werror
+      - -Wcompat
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    ld-options:
+      - -static
+    dependencies:
+      - basic
+
+tests:
+  examples-spec:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+      - -Wall
+      - -Werror
+      - -Wcompat
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - basic
+      - hspec
+      - QuickCheck
+      - smallcheck
+      - hlint
+  examples-doc:
+    main:                doc.hs
+    source-dirs:         test
+    ghc-options:
+      - -Wall
+      - -Werror
+      - -Wcompat
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - basic
+      - doctest
+    other-modules: []

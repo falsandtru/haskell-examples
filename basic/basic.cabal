@@ -4,49 +4,34 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 48a2063b9b417114401a907fc0ab12c7b70266bd9e8a6674d0809fcbb32b25e0
+-- hash: 2a4b95a788820e0d2d261a6a64a0db04f32da8c64058ecad06f623131f9b8550
 
-name:           examples
-version:        0.1.0.0
-description:    Please see the README on Github at <https://github.com/githubuser/haskell-examples#readme>
-homepage:       https://github.com/githubuser/haskell-examples#readme
-bug-reports:    https://github.com/githubuser/haskell-examples/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2018 Author name here
-license:        BSD3
-license-file:   LICENSE
+name:           basic
+version:        0.0.0
 build-type:     Simple
-extra-source-files:
-    README.md
-    ChangeLog.md
-
-source-repository head
-  type: git
-  location: https://github.com/githubuser/haskell-examples
 
 library
-  hs-source-dirs:
-      src
-  build-depends:
-      base >=4.7 && <5
   exposed-modules:
       Lib
   other-modules:
-      Paths_examples
+      Paths_basic
+  hs-source-dirs:
+      src
+  build-depends:
+      base
   default-language: Haskell2010
 
-executable example
+executable basic
   main-is: Main.hs
   other-modules:
-      Paths_examples
+      Paths_basic
   hs-source-dirs:
       app
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   ld-options: -static
   build-depends:
-      base >=4.7 && <5
-    , examples
+      base
+    , basic
   default-language: Haskell2010
 
 test-suite examples-doc
@@ -56,25 +41,25 @@ test-suite examples-doc
       test
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      base
+    , basic
     , doctest
-    , examples
   default-language: Haskell2010
 
 test-suite examples-spec
   type: exitcode-stdio-1.0
   main-is: Spec.hs
+  other-modules:
+      LibSpec
+      Paths_basic
   hs-source-dirs:
       test
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
-    , base >=4.7 && <5
-    , examples
+    , base
+    , basic
     , hlint
     , hspec
     , smallcheck
-  other-modules:
-      LibSpec
-      Paths_examples
   default-language: Haskell2010
