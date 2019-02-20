@@ -26,7 +26,7 @@ library:
   source-dirs: src
 
 executables:
-  examples-exe:
+  example:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -36,6 +36,8 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -optl-static
+    - -optl-pthread
     dependencies:
     - examples
 
@@ -56,20 +58,6 @@ tests:
     - QuickCheck
     - smallcheck
     - hlint
-# examples-proof:
-#   main:                proof.hs
-#   source-dirs:         test
-#   ghc-options:
-#   - -Wall
-#   - -Werror
-#   - -Wcompat
-#   - -threaded
-#   - -rtsopts
-#   - -with-rtsopts=-N
-#   dependencies:
-#   - examples
-#   - process
-#   other-modules: []
   examples-doc:
     main:                doc.hs
     source-dirs:         test

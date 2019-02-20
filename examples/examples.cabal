@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 65ba4510716f4fec59909e9440f4e47652e4cb7b1773ca7a55cb0e7ad5254717
+-- hash: 9b391e2311884afecd5b650e70378c6c21dd6d163158b254a322e8361913ebaf
 
 name:           examples
 version:        0.1.0.0
@@ -36,16 +36,16 @@ library
       Paths_examples
   default-language: Haskell2010
 
-executable examples-exe
+executable example
   main-is: Main.hs
+  other-modules:
+      Paths_examples
   hs-source-dirs:
       app
-  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N -optl-static -optl-pthread
   build-depends:
       base >=4.7 && <5
     , examples
-  other-modules:
-      Paths_examples
   default-language: Haskell2010
 
 test-suite examples-doc

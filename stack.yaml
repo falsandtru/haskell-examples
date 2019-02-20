@@ -15,7 +15,7 @@
 # resolver:
 #  name: custom-snapshot
 #  location: "./custom-snapshot.yaml"
-resolver: lts-13.0
+resolver: lts-13.8
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -52,3 +52,20 @@ packages:
 #
 # Require a specific version of stack, using version ranges
 # require-stack-version: -any # Default
+docker:
+  enable: true
+image:
+
+  # You need a `containers` yaml section for `stack image container`.
+  # A `container` section that does not contain a list is also valid.
+  containers:
+
+    # This example just has one container.
+    -
+      # You need a base image name. Stack layers exes on top of
+      # the base image. Prepare your project image in advance by
+      # putting all your runtime dependencies in the image.
+      base: alpine
+      name: example
+      entrypoints:
+        - example
