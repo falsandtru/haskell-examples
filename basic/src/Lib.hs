@@ -1,6 +1,7 @@
 module Lib
     ( someFunc
-    ) where
+    )
+where
 
 -- |
 -- head

@@ -4,9 +4,9 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2a4b95a788820e0d2d261a6a64a0db04f32da8c64058ecad06f623131f9b8550
+-- hash: 03ef4a086af678bb748b97c0098de7e641ffd8d1aa97c919c8f5cea562e36871
 
-name:           basic
+name:           basic-examples
 version:        0.0.0
 build-type:     Simple
 
@@ -14,24 +14,24 @@ library
   exposed-modules:
       Lib
   other-modules:
-      Paths_basic
+      Paths_basic_examples
   hs-source-dirs:
       src
   build-depends:
       base
   default-language: Haskell2010
 
-executable basic
+executable basic-examples
   main-is: Main.hs
   other-modules:
-      Paths_basic
+      Paths_basic_examples
   hs-source-dirs:
       app
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   ld-options: -static
   build-depends:
       base
-    , basic
+    , basic-examples
   default-language: Haskell2010
 
 test-suite examples-doc
@@ -42,7 +42,7 @@ test-suite examples-doc
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base
-    , basic
+    , basic-examples
     , doctest
   default-language: Haskell2010
 
@@ -51,14 +51,14 @@ test-suite examples-spec
   main-is: Spec.hs
   other-modules:
       LibSpec
-      Paths_basic
+      Paths_basic_examples
   hs-source-dirs:
       test
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
     , base
-    , basic
+    , basic-examples
     , hlint
     , hspec
     , smallcheck

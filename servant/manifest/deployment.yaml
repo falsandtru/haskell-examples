@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servant
+spec:
+  selector:
+    matchLabels:
+      app: servant
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: servant
+    spec:
+      containers:
+      - name: servant
+        image: examples-servant-examples
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

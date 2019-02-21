@@ -1,16 +1,21 @@
-name: basic-examples
+name: servant-examples
 
 default-extensions: 
 - OverloadedStrings
 
 dependencies:
 - base
+- utf8-string
+- text
+- warp
+- servant-server
+- http-media
 
 library:
   source-dirs:           src
 
 executables:
-  basic-examples:
+  servant-examples:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -23,7 +28,7 @@ executables:
     ld-options:
     - -static
     dependencies:
-    - basic-examples
+    - servant-examples
 
 tests:
   examples-spec:
@@ -37,22 +42,8 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - basic-examples
+    - servant-examples
     - hspec
     - QuickCheck
     - smallcheck
     - hlint
-  examples-doc:
-    main:                doc.hs
-    source-dirs:         test
-    ghc-options:
-    - -Wall
-    - -Werror
-    - -Wcompat
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - basic-examples
-    - doctest
-    other-modules: []

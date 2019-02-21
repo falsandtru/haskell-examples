@@ -46,3 +46,4 @@ install:
 
 script:
 - stack --no-terminal test
+- stack image container
