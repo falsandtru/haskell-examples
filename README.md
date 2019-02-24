@@ -11,7 +11,6 @@
 Make container images from Alpine Linux.
 
 1. `docker pull fpco/stack-build:lts-x`
-1. `stack build`
 1. `stack image container`
 
 ## Kubernetes

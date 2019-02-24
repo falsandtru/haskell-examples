@@ -1,14 +1,18 @@
 name: servant-examples
 
 default-extensions: 
+- Strict
+- StrictData
 - OverloadedStrings
 
 dependencies:
 - base
 - utf8-string
 - text
+- wai
 - warp
 - servant-server
+- http-types
 - http-media
 
 library:

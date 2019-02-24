@@ -8,13 +8,12 @@ module Server
   )
 where
 
-import           Prelude                        ( id
-                                                , return
-                                                )
 import           Data.ByteString.Lazy.UTF8      ( ByteString )
+import           Network.HTTP.Types             ( notFound404 )
 import           Network.HTTP.Media             ( (//)
                                                 , (/:)
                                                 )
+import qualified Network.Wai as Wai
 import           Servant
 
 data HTML
@@ -25,10 +24,17 @@ instance Accept HTML where
 instance MimeRender HTML ByteString where
   mimeRender _ = id
 
-type RootAPI = Get '[HTML] ByteString
+type API
+  =     Get '[HTML] ByteString
+  :<|>  Raw
 
-server :: Server RootAPI
-server = return "<h1>Hellow, World.</h1>"
+server :: Server API
+server
+  =     return "<h1>Hellow, World.</h1>"
+  :<|>  return raw404
+  where
+    raw404 = res notFound404 "404 Not Found."
+    res status body _ respond = respond $ Wai.responseLBS status [("Content-Type", "text/html;charset=utf-8")] body
 
 app :: Application
-app = serve (Proxy @RootAPI) server
+app = serve (Proxy @API) server

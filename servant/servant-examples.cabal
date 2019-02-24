@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c65dc3dc71b226d97b830b0923318baaf6f162bd70112f50d538c070f6e6e04b
+-- hash: 55240f5d27f7dd8d3ec34378f8f3034e1d34540e27b4cd029c45a2b387892786
 
 name:           servant-examples
 version:        0.0.0
@@ -17,13 +17,15 @@ library
       Paths_servant_examples
   hs-source-dirs:
       src
-  default-extensions: OverloadedStrings
+  default-extensions: Strict StrictData OverloadedStrings
   build-depends:
       base
     , http-media
+    , http-types
     , servant-server
     , text
     , utf8-string
+    , wai
     , warp
   default-language: Haskell2010
 
@@ -33,16 +35,18 @@ executable servant-examples
       Paths_servant_examples
   hs-source-dirs:
       app
-  default-extensions: OverloadedStrings
+  default-extensions: Strict StrictData OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   ld-options: -static
   build-depends:
       base
     , http-media
+    , http-types
     , servant-examples
     , servant-server
     , text
     , utf8-string
+    , wai
     , warp
   default-language: Haskell2010
 
@@ -53,7 +57,7 @@ test-suite examples-spec
       Paths_servant_examples
   hs-source-dirs:
       test
-  default-extensions: OverloadedStrings
+  default-extensions: Strict StrictData OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
@@ -61,10 +65,12 @@ test-suite examples-spec
     , hlint
     , hspec
     , http-media
+    , http-types
     , servant-examples
     , servant-server
     , smallcheck
     , text
     , utf8-string
+    , wai
     , warp
   default-language: Haskell2010

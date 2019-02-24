@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 03ef4a086af678bb748b97c0098de7e641ffd8d1aa97c919c8f5cea562e36871
+-- hash: 74c822658365de239bfcf4295e816f9f082b81f327f9dfc5be97745b257dbe77
 
 name:           basic-examples
 version:        0.0.0
@@ -17,6 +17,7 @@ library
       Paths_basic_examples
   hs-source-dirs:
       src
+  default-extensions: OverloadedStrings
   build-depends:
       base
   default-language: Haskell2010
@@ -27,6 +28,7 @@ executable basic-examples
       Paths_basic_examples
   hs-source-dirs:
       app
+  default-extensions: OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   ld-options: -static
   build-depends:
@@ -39,6 +41,7 @@ test-suite examples-doc
   main-is: doc.hs
   hs-source-dirs:
       test
+  default-extensions: OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base
@@ -54,6 +57,7 @@ test-suite examples-spec
       Paths_basic_examples
   hs-source-dirs:
       test
+  default-extensions: OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
