@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 55240f5d27f7dd8d3ec34378f8f3034e1d34540e27b4cd029c45a2b387892786
+-- hash: 8e8b27192fa01d0bd920e3581e4e9bd7ce6f7b995eee26dfff68a933a124ab48
 
 name:           servant-examples
 version:        0.0.0
@@ -59,6 +59,7 @@ test-suite examples-spec
       test
   default-extensions: Strict StrictData OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
   build-depends:
       QuickCheck
     , base

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 74c822658365de239bfcf4295e816f9f082b81f327f9dfc5be97745b257dbe77
+-- hash: ad77d5afbf837e736b88f200c36f5424249d41b464a29a28e43ddf247f75f2b9
 
 name:           basic-examples
 version:        0.0.0
@@ -43,6 +43,7 @@ test-suite examples-doc
       test
   default-extensions: OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
   build-depends:
       base
     , basic-examples
@@ -59,6 +60,7 @@ test-suite examples-spec
       test
   default-extensions: OverloadedStrings
   ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
   build-depends:
       QuickCheck
     , base

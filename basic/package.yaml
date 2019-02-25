@@ -36,6 +36,8 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    ld-options:
+    - -static
     dependencies:
     - basic-examples
     - hspec
@@ -52,6 +54,8 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    ld-options:
+    - -static
     dependencies:
     - basic-examples
     - doctest

@@ -45,6 +45,8 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    ld-options:
+    - -static
     dependencies:
     - servant-examples
     - hspec
