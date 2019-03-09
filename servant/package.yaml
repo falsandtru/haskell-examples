@@ -8,7 +8,6 @@ default-extensions:
 dependencies:
 - base
 - utf8-string
-- text
 - wai
 - warp
 - servant-server

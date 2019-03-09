@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8e8b27192fa01d0bd920e3581e4e9bd7ce6f7b995eee26dfff68a933a124ab48
+-- hash: e8d05a742ee3b6dee1789a0dbcf40d458b840ce40b88a19ab7d80fba7c5901e3
 
 name:           servant-examples
 version:        0.0.0
@@ -23,7 +23,6 @@ library
     , http-media
     , http-types
     , servant-server
-    , text
     , utf8-string
     , wai
     , warp
@@ -44,7 +43,6 @@ executable servant-examples
     , http-types
     , servant-examples
     , servant-server
-    , text
     , utf8-string
     , wai
     , warp
@@ -70,7 +68,6 @@ test-suite examples-spec
     , servant-examples
     , servant-server
     , smallcheck
-    , text
     , utf8-string
     , wai
     , warp

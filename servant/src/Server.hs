@@ -13,7 +13,7 @@ import           Network.HTTP.Types             ( notFound404 )
 import           Network.HTTP.Media             ( (//)
                                                 , (/:)
                                                 )
-import qualified Network.Wai as Wai
+import qualified Network.Wai                   as Wai
 import           Servant
 
 data HTML
