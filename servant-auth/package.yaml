@@ -1,0 +1,60 @@
+name: servant-auth-examples
+
+default-extensions: 
+- Strict
+- StrictData
+- OverloadedStrings
+
+dependencies:
+- base
+- utf8-string
+- text
+- aeson
+- wai
+- warp
+- http-types
+- http-media
+- http-api-data
+- servant
+- servant-server
+- servant-auth
+- servant-auth-server
+
+library:
+  source-dirs:           src
+
+executables:
+  servant-auth-examples:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -Wcompat
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    ld-options:
+    - -static
+    dependencies:
+    - servant-auth-examples
+
+tests:
+  examples-spec:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -Wcompat
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    ld-options:
+    - -static
+    dependencies:
+    - servant-auth-examples
+    - hspec
+    - QuickCheck
+    - smallcheck
+    - hlint

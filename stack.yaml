@@ -38,6 +38,7 @@ resolver: lts-13.10
 packages:
 - basic
 - servant
+- servant-auth
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 # extra-deps: []
@@ -60,4 +61,4 @@ image:
   - base: alpine
     name: examples
     entrypoints:
-    - servant-examples
+    - servant-auth-examples

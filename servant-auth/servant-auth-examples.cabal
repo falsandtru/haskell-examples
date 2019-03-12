@@ -1,0 +1,92 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a8593f70ab44b4fc3319f21fbc18f55ab4413579431775e425d4e5235d37eee1
+
+name:           servant-auth-examples
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Server
+  other-modules:
+      Paths_servant_auth_examples
+  hs-source-dirs:
+      src
+  default-extensions: Strict StrictData OverloadedStrings
+  build-depends:
+      aeson
+    , base
+    , http-api-data
+    , http-media
+    , http-types
+    , servant
+    , servant-auth
+    , servant-auth-server
+    , servant-server
+    , text
+    , utf8-string
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable servant-auth-examples
+  main-is: Main.hs
+  other-modules:
+      Paths_servant_auth_examples
+  hs-source-dirs:
+      app
+  default-extensions: Strict StrictData OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
+  build-depends:
+      aeson
+    , base
+    , http-api-data
+    , http-media
+    , http-types
+    , servant
+    , servant-auth
+    , servant-auth-examples
+    , servant-auth-server
+    , servant-server
+    , text
+    , utf8-string
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite examples-spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_servant_auth_examples
+  hs-source-dirs:
+      test
+  default-extensions: Strict StrictData OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
+  build-depends:
+      QuickCheck
+    , aeson
+    , base
+    , hlint
+    , hspec
+    , http-api-data
+    , http-media
+    , http-types
+    , servant
+    , servant-auth
+    , servant-auth-examples
+    , servant-auth-server
+    , servant-server
+    , smallcheck
+    , text
+    , utf8-string
+    , wai
+    , warp
+  default-language: Haskell2010
