@@ -39,7 +39,7 @@ before_install:
 
 install:
 - stack --version
-- docker pull fpco/stack-build:lts-13.10
+- docker pull fpco/stack-build:lts-13.14
 
 script:
 - stack --no-terminal test
