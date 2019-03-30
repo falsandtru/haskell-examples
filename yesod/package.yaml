@@ -1,0 +1,52 @@
+name: yesod-examples
+
+default-extensions: 
+- Strict
+- StrictData
+- OverloadedStrings
+
+dependencies:
+- base
+- utf8-string
+- wai
+- warp
+- yesod
+
+library:
+  source-dirs:           src
+
+executables:
+  yesod-examples:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -Wcompat
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    ld-options:
+    - -static
+    dependencies:
+    - yesod-examples
+
+tests:
+  examples-spec:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -Wcompat
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    ld-options:
+    - -static
+    dependencies:
+    - yesod-examples
+    - hspec
+    - QuickCheck
+    - smallcheck
+    - hlint

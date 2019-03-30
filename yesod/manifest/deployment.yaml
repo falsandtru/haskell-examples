@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yesod
+spec:
+  selector:
+    matchLabels:
+      app: yesod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: yesod
+    spec:
+      containers:
+      - name: yesod
+        image: examples-yesod-examples
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

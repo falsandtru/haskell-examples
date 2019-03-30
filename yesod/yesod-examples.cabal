@@ -1,0 +1,68 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 091c8df4beb119bd35bbd6e736d20bfd041d85bde156d6c1e76ae2b0864916ee
+
+name:           yesod-examples
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Server
+  other-modules:
+      Paths_yesod_examples
+  hs-source-dirs:
+      src
+  default-extensions: Strict StrictData OverloadedStrings
+  build-depends:
+      base
+    , utf8-string
+    , wai
+    , warp
+    , yesod
+  default-language: Haskell2010
+
+executable yesod-examples
+  main-is: Main.hs
+  other-modules:
+      Paths_yesod_examples
+  hs-source-dirs:
+      app
+  default-extensions: Strict StrictData OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
+  build-depends:
+      base
+    , utf8-string
+    , wai
+    , warp
+    , yesod
+    , yesod-examples
+  default-language: Haskell2010
+
+test-suite examples-spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_yesod_examples
+  hs-source-dirs:
+      test
+  default-extensions: Strict StrictData OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -threaded -rtsopts -with-rtsopts=-N
+  ld-options: -static
+  build-depends:
+      QuickCheck
+    , base
+    , hlint
+    , hspec
+    , smallcheck
+    , utf8-string
+    , wai
+    , warp
+    , yesod
+    , yesod-examples
+  default-language: Haskell2010
