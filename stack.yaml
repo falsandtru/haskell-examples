@@ -62,4 +62,5 @@ image:
   - base: alpine
     name: examples
     entrypoints:
+    - servant-examples
     - yesod-examples
