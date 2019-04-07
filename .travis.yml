@@ -1,4 +1,4 @@
-language: c
+language: generic
 
 cache:
   directories:
@@ -17,9 +17,10 @@ before_install:
 - travis_retry curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
 install:
-- stack --version
 - docker pull fpco/stack-build:$STACKAGEVER
+- stack --version
+- stack --docker --no-terminal test --install-ghc --only-dependencies --docker-auto-pull
 
 script:
-- stack --docker-auto-pull --no-terminal test
-- stack --docker-auto-pull --docker image container
+- stack --docker --no-terminal test --haddock --no-haddock-deps
+- stack --docker --no-terminal image container
